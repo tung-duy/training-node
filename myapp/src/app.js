@@ -4,6 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var lessMiddleware = require('less-middleware');
 var logger = require('morgan');
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://root:rootPassword@localhost:27018/test?authSource=admin', {useNewUrlParser: true, useUnifiedTopology: true});
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  // we're connected!
+  console.log('Mongodb is working...');
+});
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

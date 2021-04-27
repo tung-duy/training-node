@@ -16,7 +16,10 @@
     "joi": "^17.4.0",
     "less-middleware": "~2.2.1",
     "lodash": "^4.17.21",
-    "morgan": "~1.9.1",
+    "mongoose": "^5.12.5",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.7"
   }
 }
